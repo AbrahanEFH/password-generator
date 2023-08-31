@@ -7,12 +7,15 @@
 body {
     font-family: 'Raleway', sans-serif;
     margin: 0;
-
-    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    background-color: aliceblue;
     display: flex;
-    align-items: left;
-    justify-content: left;
-    margin: 0;
+    align-items: center;
+    justify-content: center;
     min-height: 100vh;
-    padding: 7rem;
+    color: whitesmoke;
+}
+
+.pw-container {
+    background-color: rgb(123, 161, 194);
+    width: 400px;
 }

@@ -1,6 +1,6 @@
 
-const pw = document.getElementById('pw')
-const len = document.getElementById('len')
+const pwEl = document.getElementById('pw')
+const lenEl = document.getElementById('len')
 const upperEl = document.getElementById('upper')
 const lowerEl = document.getElementById('lower')
 const numberEl = document.getElementById('number')
@@ -28,3 +28,38 @@ function getSymbol () {
     return symbols[Math.floor(Math.random() * symbols.length)]
     
 }
+
+function generatePassword(){
+    const len = lenEl.value;
+    let password = '';
+
+    for(let i=0; i<len; i++) {
+        const x = generateX();
+        password += x;
+    }
+
+    pwEl.innerText = password;
+}
+
+function generateX() {
+    const xs = [];
+    if(upperEl.checked) {
+        xs.push(getUpperCase())
+    }
+
+    if(lowerEl.checked) {
+        xs.push(getLowerCase())
+    }
+
+    if(numberEl.checked) {
+        xs.push(getNumber())
+    }
+
+    if(symbolEl.checked) {
+        xs.push(getSymbol())
+    }
+    
+    return xs[Math.floor(Math.random() * xs.length)];
+}
+
+generateEl.addEventListener('click', generatePassword)

@@ -13,15 +13,18 @@ const numbers = '1234567890'
 const symbols = '!@#$%^&*()_-=+'
 
 function getLowerCase () {
-
+    return lowerLetters[Math.floor(Math.random() * lowerLetters.length)]
 }
 
 function getUpperCase () {
+    return upperLetters[Math.floor(Math.random() * upperLetters.length)]
     
 }
 function getNumber () {
+    return numbers[Math.floor(Math.random() * numbers.length)]
     
 }
 function getSymbol () {
+    return symbols[Math.floor(Math.random() * symbols.length)]
     
 }

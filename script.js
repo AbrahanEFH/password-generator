@@ -1,5 +1,6 @@
 
 const pwEl = document.getElementById('pw')
+const copyEl = document.getElementById('copy')
 const lenEl = document.getElementById('len')
 const upperEl = document.getElementById('upper')
 const lowerEl = document.getElementById('lower')
@@ -58,8 +59,30 @@ function generateX() {
     if(symbolEl.checked) {
         xs.push(getSymbol())
     }
+
+    if (xs.length === 0) return '';
     
     return xs[Math.floor(Math.random() * xs.length)];
 }
 
 generateEl.addEventListener('click', generatePassword)
+
+
+copyEl.addEventListener('click', () => {
+  const password = pwEl.innerText;
+
+  if (!password) {
+    return;
+  }
+
+  navigator.clipboard.writeText(password)
+    .then(() => {
+      alert('Password copied to clipboard');
+    })
+    .catch((err) => {
+      console.error('Error copying password: ', err);
+    });
+});
+
+
+

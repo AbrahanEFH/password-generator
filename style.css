@@ -44,6 +44,7 @@ body {
 .pw button {
     font-weight: bold;
     font-family: inherit;
+    font-size: 1rem;
     border-radius: 0.25rem;
     color: aliceblue;
     background-color: rgb(97, 152, 200);
@@ -55,10 +56,12 @@ body {
     opacity: 0;
     transition: opacity 0.2s ease;
     cursor: pointer;
+  
 }
 
 .pw:hover button {
     opacity: 1;
+    
 }
 
 .form-control {
